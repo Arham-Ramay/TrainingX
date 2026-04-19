@@ -38,9 +38,9 @@ export default function ComparisonSection() {
     <section className="bg-white py-14 sm:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-[#E6F2ED] rounded-full px-4 py-1.5">
+          <div className="inline-flex items-center gap-2 bg-[#E5F1F3] rounded-full px-4 py-1.5 border border-blue">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2d6a5a]" />
-            <span className="text-[#2d6a5a] text-xs sm:text-sm font-semibold">
+            <span className="text-blue text-xs sm:text-sm font-semibold">
               How We Compare
             </span>
           </div>

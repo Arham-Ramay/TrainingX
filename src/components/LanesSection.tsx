@@ -1,9 +1,25 @@
 "use client";
 
+import { 
+  Baby, 
+  Users, 
+  User, 
+  Heart, 
+  GraduationCap, 
+  Users2, 
+  Briefcase, 
+  Search, 
+  Building2, 
+  RotateCcw, 
+  BookOpen, 
+  Lightbulb 
+} from "lucide-react";
+
 interface Lane {
   title: string;
   description: string;
   highlighted?: boolean;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const lanes: Lane[] = [
@@ -12,67 +28,79 @@ const lanes: Lane[] = [
     description:
       "Homework, classroom help, books, games, art \u2014 all in one safe place. Builds AI confidence early.",
     highlighted: true,
+    icon: Baby,
   },
   {
     title: "Teens",
     description:
       "One assessment unlocks your Triple Threat. See careers Before vs After AI. Auto-build your resume.",
+    icon: Users,
   },
   {
     title: "Adults",
     description:
       "Reach your full earnings potential. See where else your skills fit. Path to ownership, not just employment.",
+    icon: User,
   },
   {
     title: "Parents",
     description:
       "One safe platform their kid uses from 8 through adulthood. See progress in real time. Replaces 5 apps.",
+    icon: Heart,
   },
   {
     title: "Schools & Districts",
     description:
       "Upload your curriculum \u2014 system rebuilds around it. Real-time dashboard. Proven in classrooms since 2017.",
+    icon: GraduationCap,
   },
   {
     title: "Clubs & Community Orgs",
     description:
       "Show funders real outcomes with live data. Members get lifetime value. Youth and adults \u2014 same platform.",
+    icon: Users2,
   },
   {
     title: "Workforce Development",
     description:
       "Move people from \u201CI don't know\u201D to certified and matched in weeks. Built-in business acquisition path.",
+    icon: Briefcase,
   },
   {
     title: "Recruiters & Employers",
     description:
       "Live talent maps by city. Verified scores tied to real practice. See who's truly ready before you call.",
+    icon: Search,
   },
   {
     title: "Enterprises",
     description:
       "Train your whole team. Track every score. License only the modules you need.",
+    icon: Building2,
   },
   {
     title: "Reentry Programs",
     description:
       "Meets people exactly where they are. Assessment-based, not background-based. No stigma.",
+    icon: RotateCcw,
   },
   {
     title: "Lifelong Learners",
     description:
       "Retired? Career changing? Start where you are. Find new income paths in retirement.",
+    icon: BookOpen,
   },
   {
     title: "Solo Entrepreneurs",
     description:
       "Skills assessment + auto business plan + financial forecast + acquisition path \u2014 all from one assessment.",
+    icon: Lightbulb,
   },
 ];
 
 export default function LanesSection() {
   return (
-    <section className="bg-[#2F6B52] py-14 sm:py-20 px-4 sm:px-6">
+    <section className="bg-primary py-14 sm:py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 bg-[#B8D9CA] rounded-full px-4 py-1.5">
@@ -87,7 +115,7 @@ export default function LanesSection() {
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight">
             One platform. One assessment. A lifetime of growth
           </h2>
-          <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#7DBFA3] mt-1 leading-tight">
+          <p className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#40BC91] mt-1 leading-tight">
             for every age, every goal, every lane.
           </p>
         </div>
@@ -111,14 +139,19 @@ function LaneCard({ lane }: { lane: Lane }) {
   const base =
     "rounded-2xl p-5 sm:p-6 flex flex-col min-h-36 sm:min-h-40 transition-colors";
   const styles = lane.highlighted
-    ? "bg-[#7DBFA3]"
+    ? "bg-[#40BC91]"
     : "bg-[#3D7A64] hover:bg-[#4a9079]";
+
+  const IconComponent = lane.icon;
 
   return (
     <div className={`${base} ${styles}`}>
-      <h3 className="text-white text-lg sm:text-xl font-bold mb-2 sm:mb-3">
-        {lane.title}
-      </h3>
+      <div className="flex items-start  gap-3 mb-2 sm:mb-3">
+        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+        <h3 className="text-white text-lg sm:text-xl font-bold">
+          {lane.title}
+        </h3>
+      </div>
       <p
         className={`text-xs sm:text-sm leading-relaxed ${
           lane.highlighted ? "text-white/90" : "text-white/75"

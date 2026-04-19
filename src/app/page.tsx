@@ -6,6 +6,7 @@ import GrowthSection from "@/components/GrowthSection";
 import LanesSection from "@/components/LanesSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import Footer from "@/components/Footer";
+import OurApproch from "@/components/OurApprochSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <StatsSection />
       <CommunitiesSection />
       <GapSection />
+      <OurApproch/>
       <GrowthSection />
       <LanesSection />
       <ComparisonSection />

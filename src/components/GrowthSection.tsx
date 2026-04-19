@@ -22,6 +22,7 @@ const cards: Card[] = [
     bg: "bg-[#2F6B52]",
     tagBg: "bg-black/30",
     tagText: "text-white",
+    imageSrc: "/stationary.png",
     imageAlt: "Spiral ages 8-14",
   },
   {
@@ -32,6 +33,7 @@ const cards: Card[] = [
     bg: "bg-[#2E6478]",
     tagBg: "bg-black/30",
     tagText: "text-white",
+    imageSrc: "/robot.png",
     imageAlt: "Career Hub ages 15+",
   },
   {
@@ -42,6 +44,7 @@ const cards: Card[] = [
     bg: "bg-[#7DBFA3]",
     tagBg: "bg-black/30",
     tagText: "text-white",
+    imageSrc: "/brain.png",
     imageAlt: "Learning zone",
   },
   {
@@ -52,6 +55,7 @@ const cards: Card[] = [
     bg: "bg-[#E9B949]",
     tagBg: "bg-black/30",
     tagText: "text-white",
+    imageSrc: "/game.png",
     imageAlt: "Practice zone",
   },
 ];
@@ -59,7 +63,7 @@ const cards: Card[] = [
 export default function GrowthSection() {
   return (
     <section className="bg-white py-14 sm:py-20 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 bg-[#E6F2ED] rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2d6a5a]" />
@@ -83,7 +87,7 @@ export default function GrowthSection() {
           competitor offers this.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-7xl">
           {cards.map((card, i) => (
             <GrowthCard key={i} card={card} />
           ))}
@@ -101,39 +105,43 @@ export default function GrowthSection() {
 function GrowthCard({ card }: { card: Card }) {
   return (
     <div
-      className={`${card.bg} rounded-2xl sm:rounded-3xl overflow-hidden relative min-h-56 sm:min-h-64 flex`}
+      className={`${card.bg} rounded-2xl sm:rounded-3xl overflow-hidden relative min-h-56 sm:min-h-64`}
     >
-      <div className="flex-1 p-5 sm:p-7 md:p-8 flex flex-col relative z-10">
-        <div
-          className={`${card.tagBg} ${card.tagText} inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold self-start mb-3 sm:mb-4`}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-white" />
-          {card.tag}
+      <div className="relative h-full flex">
+        {/* Content Section */}
+        <div className="flex-1 p-5 sm:p-7 md:p-8 flex flex-col relative z-10 pr-4">
+          <div
+            className={`${card.tagBg} ${card.tagText} inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold self-start mb-3 sm:mb-4`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            {card.tag}
+          </div>
+
+          <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-tight mb-2 sm:mb-3 max-w-[280px]">
+            {card.title}
+          </h3>
+
+          <p className="text-white/85 text-xs sm:text-sm leading-relaxed max-w-[280px]">
+            {card.description}
+          </p>
         </div>
 
-        <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-tight mb-2 sm:mb-3">
-          {card.title}
-        </h3>
-
-        <p className="text-white/85 text-xs sm:text-sm leading-relaxed max-w-sm">
-          {card.description}
-        </p>
-      </div>
-
-      <div className="w-2/5 relative shrink-0 flex items-center justify-center">
-        {card.imageSrc ? (
-          <div className="relative w-full h-full m-3 sm:m-4 rounded-[45%_55%_60%_40%/50%_40%_60%_50%] overflow-hidden bg-black/10">
-            <Image
-              src={card.imageSrc}
-              alt={card.imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 40vw, 20vw"
-            />
-          </div>
-        ) : (
-          <div className="w-[85%] h-[80%] rounded-[45%_55%_60%_40%/50%_40%_60%_50%] bg-black/15" />
-        )}
+        {/* Image Section */}
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40">
+          {card.imageSrc ? (
+            <div className="relative w-full h-full rounded-[45%_55%_60%_40%/50%_40%_60%_50%] overflow-hidden bg-black/10 shadow-lg">
+              <Image
+                src={card.imageSrc}
+                alt={card.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 128px, 160px"
+              />
+            </div>
+          ) : (
+            <div className="w-full h-full rounded-[45%_55%_60%_40%/50%_40%_60%_50%] bg-black/15" />
+          )}
+        </div>
       </div>
     </div>
   );
