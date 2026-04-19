@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Sparkles, ChevronDown, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -12,25 +13,14 @@ const NAV_LINKS = [
 
 function Logo() {
   return (
-    <div className="flex items-center gap-1">
-      <div className="flex items-center">
-        {["bg-red-500", "bg-yellow-400", "bg-green-500", "bg-blue-500"].map(
-          (color, i) => (
-            <div
-              key={i}
-              className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full ${color} -ml-1 first:ml-0 border-2 border-[#E9EAEB] flex items-center justify-center`}
-            >
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/80 rounded-full" />
-            </div>
-          )
-        )}
-      </div>
-      <span className="ml-2 font-bold text-gray-800 text-sm sm:text-base tracking-tight">
-        Training<span className="text-[#017756]">x</span>
-        <span className="text-gray-600">.ai</span>
-        <sup className="text-[10px] font-normal text-gray-500">™</sup>
-      </span>
-    </div>
+    <Image
+      src="/logo.svg"
+      alt="Trainingx.ai"
+      width={147}
+      height={51}
+      priority
+      className="h-8 w-auto sm:h-9"
+    />
   );
 }
 
@@ -38,8 +28,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-      <div className="bg-[#E9EAEB] rounded-full flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 shadow-sm">
+    <nav className="max-w-7xl mx-auto  relative ">
+      <div className="bg-[#B2D6CE] rounded-lg flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 shadow-sm">
         <Logo />
 
         <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-gray-700 text-sm font-medium">
@@ -134,7 +124,7 @@ function SocialProofPill() {
 
 function HeroVisual() {
   return (
-    <div className="w-full max-w-5xl mx-auto mt-10 sm:mt-12 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+    <div className="w-full max-w-7xl mx-auto mt-10 sm:mt-12 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
       <div className="aspect-video sm:aspect-16/7 relative bg-linear-to-br from-[#a8d8c6] via-[#7cc0a8] to-[#4a9680]">
         <svg
           viewBox="0 0 900 400"
@@ -166,10 +156,10 @@ function HeroVisual() {
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#017756] pt-4 sm:pt-6 pb-10 sm:pb-12 overflow-hidden">
+    <section className="relative bg-primary pt-4 sm:pt-6 pb-10 sm:pb-12 overflow-hidden ">
       <Navbar />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 relative">
+      <div className="w-full mx-auto px-4 sm:px-6 pt-8 sm:pt-12 relative ">
         <div className="flex justify-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 bg-[#015c43] border border-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#40BC91]" />
@@ -195,8 +185,8 @@ export default function HeroSection() {
           built Reactive Parallelism Continuous AI. We&apos;re not new. We&apos;ve been ready.
         </p>
 
-        <div className="relative mt-10 sm:mt-12">
-          <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2">
+        <div className="relative mt-10 sm:mt-12 max-w-[1360px] mx-auto ">
+          <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 ">
             <AIAgentCard />
           </div>
           <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2">

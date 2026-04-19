@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #027759;
+  --color-secondary: #75ad9b;
+  --color-blue: #007489;
+  --color-yellow: #ecbd00;
+}
+
 body {
   margin: 0;
   padding: 0;
