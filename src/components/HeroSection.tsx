@@ -161,9 +161,9 @@ export default function HeroSection() {
 
       <div className="w-full mx-auto px-4 sm:px-6 pt-8 sm:pt-12 relative ">
         <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 bg-[#015c43] border border-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#40BC91]" />
-            <span className="text-white text-[11px] sm:text-xs font-medium">
+          <div className="inline-flex items-center gap-2 bg-blue-light border border-white/10 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+            <span className="text-blue  text-[11px] sm:text-xs font-medium">
               Built since 2012 · Proven since 2015
             </span>
           </div>

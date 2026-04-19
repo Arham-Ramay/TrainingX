@@ -14,8 +14,8 @@ interface StatCardProps {
 }
 
 const bgClasses: Record<Variant, string> = {
-  light: "bg-[#7DBFA3]",
-  dark: "bg-[#3D7A64]",
+  light: "bg-[#3FBC91]",
+  dark: "bg-primary",
 };
 
 export default function StatCard({
@@ -39,7 +39,7 @@ export default function StatCard({
         ) : (
           <div className="flex items-start gap-2">
             {watermark === "chart" && <ChartIcon />}
-            <p className="text-4xl sm:text-5xl md:text-[56px] font-extrabold text-white leading-none">
+            <p className="text-4xl sm:text-5xl md:text-[56px]  mx-auto font-extrabold text-white leading-none">
               {value}
             </p>
           </div>

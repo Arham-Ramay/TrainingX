@@ -4,8 +4,8 @@ import StatCard from "./StatCard";
 
 export default function StatsSection() {
   return (
-    <section className="bg-[#8FB5A3] py-12 sm:py-16 px-4 sm:px-6">
-      <div className="text-center mb-10 sm:mb-12">
+    <section className="bg-secondary py-12 sm:py-16 px-4 sm:px-6 ">
+      <div className="text-center mb-10 sm:mb-12  max-w-7xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
           We didn&apos;t just talk about AI in education.
         </h2>
@@ -14,7 +14,7 @@ export default function StatsSection() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 ">
         <StatCard
           variant="light"
           watermark="chart"

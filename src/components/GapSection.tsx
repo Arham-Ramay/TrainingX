@@ -5,17 +5,17 @@ import { School, Briefcase, Map, ArrowRight } from "lucide-react";
 const cards = [
   {
     icon: School,
-    bg: "bg-[#3D7A64]",
+    bg: "bg-primary",
     text: "School taught you facts \u2014 not how to use AI.",
   },
   {
     icon: Briefcase,
-    bg: "bg-[#7DBFA3]",
+    bg: "bg-secondary",
     text: "Work gave you skills \u2014 but didn't show where else they fit.",
   },
   {
     icon: Map,
-    bg: "bg-[#E9B949]",
+    bg: "bg-yellow",
     text: "Nobody handed you a map for the next 40 years. We did.",
   },
 ];
@@ -63,7 +63,7 @@ export default function GapSection() {
           })}
         </div>
 
-        <div className="bg-[#3D7A64] rounded-2xl py-6 sm:py-10 px-4 sm:px-12">
+        <div className="bg-primary rounded-2xl py-6 sm:py-10 px-4 sm:px-12">
           <div className="flex items-center justify-between gap-2 sm:gap-6 flex-wrap md:flex-nowrap">
             {stages.map((stage, i) => (
               <div
